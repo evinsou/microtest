@@ -3,7 +3,7 @@ class ReceiverController < ApplicationController
     attrs = permitted_params
     counter = Counter.create
     attrs[:counter_id] = counter.id
-    # place for publish 
+    Publisher.publish('mails', attrs)
     render nothing: true
   end
 

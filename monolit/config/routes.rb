@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'receiver/create'
-  get 'home/index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post '/receiver', to: 'receiver#create'
+  put '/receiver/:id', to: 'receiver#update'
+  post '/home', to: 'home#index'
+  root to: 'home#index'
 end
